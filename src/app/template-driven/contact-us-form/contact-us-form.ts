@@ -1,9 +1,31 @@
+// contact-us-form.ts
+
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-contact-us-form',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, FormsModule],
   templateUrl: './contact-us-form.html',
-  styleUrl: './contact-us-form.css',
+  styleUrls: ['./contact-us-form.css']
 })
-export class ContactUsForm {}
+export class ContactUsForm {
+
+  onSubmit(form: NgForm) {
+
+    if (form.invalid) {
+      form.control.markAllAsTouched();
+      return;
+    }
+
+    console.log(form.value);
+
+    alert('Message Sent Successfully');
+
+    form.resetForm();
+
+  }
+
+}

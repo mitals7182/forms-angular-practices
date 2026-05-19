@@ -1,1 +1,88 @@
 <p>contact-us-form works!</p>
+<!-- contact-us-form.html -->
+
+<form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+
+    <h2>Contact Us Form</h2>
+
+    <!-- Name -->
+    <label>Name</label>
+
+    <input
+        type="text"
+        name="name"
+        ngModel
+        required
+        #name="ngModel">
+
+    @if (name.invalid && (name.dirty || name.touched)) {
+        <small class="text-error">
+            Name is required
+        </small>
+    }
+
+    <br><br>
+
+    <!-- Email -->
+    <label>Email</label>
+
+    <input
+        type="email"
+        name="email"
+        ngModel
+        required
+        email
+        #email="ngModel">
+
+    @if (email.invalid && (email.dirty || email.touched)) {
+        <small class="text-error">
+            Valid email is required
+        </small>
+    }
+
+    <br><br>
+
+    <!-- Subject -->
+    <label>Subject</label>
+
+    <input
+        type="text"
+        name="subject"
+        ngModel
+        required
+        #subject="ngModel">
+
+    @if (subject.invalid && (subject.dirty || subject.touched)) {
+        <small class="text-error">
+            Subject is required
+        </small>
+    }
+
+    <br><br>
+
+    <!-- Message -->
+    <label>Message</label>
+
+    <textarea
+        name="message"
+        rows="5"
+        ngModel
+        required
+        #message="ngModel">
+
+    </textarea>
+
+    @if (message.invalid && (message.dirty || message.touched)) {
+        <small class="text-error">
+            Message is required
+        </small>
+    }
+
+    <br><br>
+
+    <!-- Submit Button -->
+    <button type="submit">
+        Send Message
+    </button>
+
+</form>
