@@ -1,0 +1,117 @@
+<form #studentForm="ngForm" (ngSubmit)="onSubmit(studentForm)">
+
+  <!-- Name -->
+  <label>Name</label>
+  <input
+    type="text"
+    name="name"
+    ngModel
+    required
+    #name="ngModel">
+
+  <div *ngIf="name.invalid && (name.touched || studentForm.submitted)">
+    <small class="text-error">Name is required</small>
+  </div>
+
+  <br><br>
+
+  <!-- Email -->
+  <label>Email</label>
+  <input
+    type="email"
+    name="email"
+    ngModel
+    required
+    #email="ngModel">
+
+  <div *ngIf="email.invalid && (email.touched || studentForm.submitted)">
+    <small class="text-error">Email is required</small>
+  </div>
+
+  <br><br>
+
+  <!-- Mobile -->
+  <label>Mobile Number</label>
+  <input
+    type="text"
+    name="mobileNumber"
+    ngModel
+    required
+    #mobileNumber="ngModel">
+
+  <div *ngIf="mobileNumber.invalid && (mobileNumber.touched || studentForm.submitted)">
+    <small class="text-error">Mobile Number is required</small>
+  </div>
+
+  <br><br>
+
+  <!-- Gender -->
+  <label>Gender</label>
+
+  <select
+    name="gender"
+    ngModel
+    required
+    #gender="ngModel">
+
+    <option value="">Select Gender</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+
+  </select>
+
+  <div *ngIf="gender.invalid && (gender.touched || studentForm.submitted)">
+    <small class="text-error">Gender is required</small>
+  </div>
+
+  <br><br>
+
+  <!-- Course -->
+  <label>Course</label>
+
+  <select
+    name="course"
+    ngModel
+    required
+    #course="ngModel">
+
+    <option value="">Select Course</option>
+    <option value="AI">AI</option>
+    <option value="Python">Python</option>
+    <option value="Java">Java</option>
+
+  </select>
+
+  <div *ngIf="course.invalid && (course.touched || studentForm.submitted)">
+    <small class="text-error">Course is required</small>
+  </div>
+
+  <br><br>
+
+  <!-- Terms -->
+  <div class="form-check">
+
+    <input
+      type="checkbox"
+      name="terms"
+      ngModel
+      required
+      #terms="ngModel">
+
+    <label>I agree to terms and conditions</label>
+
+  </div>
+
+  <div *ngIf="terms.invalid && studentForm.submitted">
+    <small class="text-error">
+      Please accept terms and conditions
+    </small>
+  </div>
+
+  <br><br>
+
+  <button type="submit">
+    Submit
+  </button>
+
+</form>
