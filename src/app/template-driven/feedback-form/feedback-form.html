@@ -1,0 +1,77 @@
+<p>feedback-form works!</p>
+<!-- feedback-form.html -->
+
+<form #feedbackForm="ngForm" (ngSubmit)="onSubmit(feedbackForm)">
+
+    <h2>Feedback Form</h2>
+
+    <!-- Username -->
+    <label>Username</label>
+
+    <input
+        type="text"
+        name="username"
+        ngModel
+        required
+        #username="ngModel">
+
+    <div *ngIf="username.invalid && (username.touched || feedbackForm.submitted)">
+        <small class="text-error">
+            Username is required
+        </small>
+    </div>
+
+    <br><br>
+
+    <!-- Rating -->
+    <label>Rating</label>
+
+    <select
+        name="rating"
+        ngModel
+        required
+        #rating="ngModel">
+
+        <option value="">Select Rating</option>
+        <option value="1">1 - Poor</option>
+        <option value="2">2 - Average</option>
+        <option value="3">3 - Good</option>
+        <option value="4">4 - Very Good</option>
+        <option value="5">5 - Excellent</option>
+
+    </select>
+
+    <div *ngIf="rating.invalid && (rating.touched || feedbackForm.submitted)">
+        <small class="text-error">
+            Rating is required
+        </small>
+    </div>
+
+    <br><br>
+
+    <!-- Feedback -->
+    <label>Feedback</label>
+
+    <textarea
+        name="feedback"
+        rows="5"
+        ngModel
+        required
+        #feedback="ngModel">
+
+    </textarea>
+
+    <div *ngIf="feedback.invalid && (feedback.touched || feedbackForm.submitted)">
+        <small class="text-error">
+            Feedback is required
+        </small>
+    </div>
+
+    <br><br>
+
+    <!-- Submit Button -->
+    <button type="submit">
+        Submit Feedback
+    </button>
+
+</form>
