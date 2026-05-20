@@ -1,0 +1,99 @@
+<form
+  [formGroup]="registrationForm"
+  (ngSubmit)="onSubmit()"
+>
+
+  <h2>Registration Form</h2>
+
+  <!-- Name -->
+
+  <input
+    type="text"
+    placeholder="Enter Name"
+    formControlName="name"
+  >
+
+  <div
+    class="error"
+
+    *ngIf="
+      registrationForm.get('name')?.invalid &&
+      (
+        registrationForm.get('name')?.touched ||
+        registrationForm.get('name')?.dirty
+      )
+    "
+  >
+    Name is required
+  </div>
+
+  <!-- Email -->
+
+  <input
+    type="email"
+    placeholder="Enter Email"
+    formControlName="email"
+  >
+
+  <div
+    class="error"
+
+    *ngIf="
+      registrationForm.get('email')?.invalid &&
+      (
+        registrationForm.get('email')?.touched ||
+        registrationForm.get('email')?.dirty
+      )
+    "
+  >
+    Enter valid email
+  </div>
+
+  <!-- Password -->
+
+  <input
+    type="password"
+    placeholder="Enter Password"
+    formControlName="password"
+  >
+
+  <div
+    class="error"
+
+    *ngIf="
+      registrationForm.get('password')?.errors?.['minlength']
+    "
+  >
+    Password must be at least 6 characters
+  </div>
+
+  <!-- Confirm Password -->
+
+  <input
+    type="password"
+    placeholder="Confirm Password"
+    formControlName="confirmPassword"
+  >
+
+  <div
+    class="error"
+
+    *ngIf="
+      registrationForm.get('confirmPassword')?.invalid &&
+      (
+        registrationForm.get('confirmPassword')?.touched ||
+        registrationForm.get('confirmPassword')?.dirty
+      )
+    "
+  >
+    Confirm Password is required
+  </div>
+
+  <button
+    type="submit"
+    [disabled]="registrationForm.invalid"
+  >
+    Register
+  </button>
+
+</form>
