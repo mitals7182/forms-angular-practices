@@ -1,0 +1,41 @@
+form {
+  width: 280px;
+  margin: 40px auto;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: Arial;
+  background: #28bb8f;
+}
+
+input {
+  width: 100%;
+  padding: 6px;
+  margin: 6px 0;
+}
+
+button {
+  width: 100%;
+  padding: 6px;
+  background: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: darkgreen;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin: 0;
+}
+
+pre {
+  background: black;
+  color: lime;
+  padding: 10px;
+  margin-top: 10px;
+}

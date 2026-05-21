@@ -8,6 +8,7 @@ import { ContactUsForm } from './template-driven/contact-us-form/contact-us-form
 import { RegistrationForm } from './reactive-forms/registration-form/registration-form';
 import { ProductForm } from './reactive-forms/product-form/product-form';
 import { ProfileUpdateFormComponent } from './reactive-forms/profile-update-form/profile-update-form';
+import { EmployeeManagementForm } from './reactive-forms/employee-management-form/employee-management-form';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,8 @@ import { ProfileUpdateFormComponent } from './reactive-forms/profile-update-form
     ContactUsForm,
     RegistrationForm,
     ProductForm,
-    ProfileUpdateFormComponent
+    ProfileUpdateFormComponent,
+    EmployeeManagementForm
   ],
 
   template: `
@@ -51,6 +53,10 @@ import { ProfileUpdateFormComponent } from './reactive-forms/profile-update-form
     <hr>
 
     <app-profile-update-form></app-profile-update-form>
+
+
+    <hr>
+    <app-employee-management-form></app-employee-management-form>
 
   `
 })
