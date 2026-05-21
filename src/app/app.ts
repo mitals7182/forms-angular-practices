@@ -7,6 +7,7 @@ import { FeedbackForm } from './template-driven/feedback-form/feedback-form';
 import { ContactUsForm } from './template-driven/contact-us-form/contact-us-form';
 import { RegistrationForm } from './reactive-forms/registration-form/registration-form';
 import { ProductForm } from './reactive-forms/product-form/product-form';
+import { ProfileUpdateFormComponent } from './reactive-forms/profile-update-form/profile-update-form';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,8 @@ import { ProductForm } from './reactive-forms/product-form/product-form';
     FeedbackForm,
     ContactUsForm,
     RegistrationForm,
-    ProductForm
+    ProductForm,
+    ProfileUpdateFormComponent
   ],
 
   template: `
@@ -45,6 +47,10 @@ import { ProductForm } from './reactive-forms/product-form/product-form';
     <hr>
 
     <app-product-form></app-product-form>
+
+    <hr>
+
+    <app-profile-update-form></app-profile-update-form>
 
   `
 })
