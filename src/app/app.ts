@@ -6,6 +6,7 @@ import { StudentRegistrationForm } from './template-driven/student-registration-
 import { FeedbackForm } from './template-driven/feedback-form/feedback-form';
 import { ContactUsForm } from './template-driven/contact-us-form/contact-us-form';
 import { RegistrationForm } from './reactive-forms/registration-form/registration-form';
+import { ProductForm } from './reactive-forms/product-form/product-form';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ import { RegistrationForm } from './reactive-forms/registration-form/registratio
     StudentRegistrationForm,
     FeedbackForm,
     ContactUsForm,
-    RegistrationForm
+    RegistrationForm,
+    ProductForm
   ],
 
   template: `
@@ -39,6 +41,10 @@ import { RegistrationForm } from './reactive-forms/registration-form/registratio
     <hr>
 
     <app-registration-form></app-registration-form>
+
+    <hr>
+
+    <app-product-form></app-product-form>
 
   `
 })

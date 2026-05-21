@@ -1,1 +1,108 @@
 <p>product-form works!</p>
+
+
+<form
+  [formGroup]="productForm"
+  (ngSubmit)="onSubmit()"
+>
+
+  <h2>Product Form</h2>
+
+  <!-- Product Name -->
+
+  <input
+    type="text"
+    placeholder="Product Name"
+    formControlName="productName"
+  >
+
+  <div
+    class="error"
+
+    *ngIf="
+      productForm.get('productName')?.invalid &&
+      productForm.get('productName')?.touched
+    "
+  >
+    Product Name is required
+  </div>
+
+  <!-- Price -->
+
+  <input
+    type="number"
+    placeholder="Price"
+    formControlName="price"
+  >
+
+  <div
+    class="error"
+
+    *ngIf="
+      productForm.get('price')?.errors?.['required'] &&
+      productForm.get('price')?.touched
+    "
+  >
+    Price is required
+  </div>
+
+  <div
+    class="error"
+
+    *ngIf="
+      productForm.get('price')?.errors?.['min']
+    "
+  >
+    Minimum price should be 1
+  </div>
+
+  <!-- Category -->
+
+  <select formControlName="category">
+
+    <option value="">Select Category</option>
+
+    <option value="electronics">
+      Electronics
+    </option>
+
+    <option value="clothing">
+      Clothing
+    </option>
+
+    <option value="books">
+      Books
+    </option>
+
+  </select>
+
+  <div
+    class="error"
+
+    *ngIf="
+      productForm.get('category')?.invalid &&
+      productForm.get('category')?.touched
+    "
+  >
+    Category is required
+  </div>
+
+  <!-- Description -->
+
+  <textarea
+    rows="4"
+    placeholder="Description"
+    formControlName="description"
+  >
+  </textarea>
+
+  <!-- Submit Button -->
+
+  <button
+    type="submit"
+    [disabled]="productForm.invalid"
+  >
+    Add Product
+  </button>
+
+</form>
